@@ -1,7 +1,10 @@
 {
-  "name": "@floodark/emergency-ui",
+  "name": "@ronfloodark/emergency-ui",
   "version": "1.0.0",
   "description": "Professional emergency interface design system for disaster management and crisis response applications",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/emergency-ui.css",
   "module": "dist/emergency-ui.esm.css",
   "types": "dist/index.d.ts",
@@ -40,10 +43,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/floodark/emergency-ui.git"
+    "url": "https://github.com/floodark-ron/emergency-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/floodark/emergency-ui/issues"
+    "url": "https://github.com/floodark-ron/emergency-ui/issues"
   },
   "homepage": "https://emergency-ui.floodark.com",
   "devDependencies": {
