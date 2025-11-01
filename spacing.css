@@ -1,0 +1,197 @@
+/**
+ * EMERGENCY UI - SPACING TOKENS
+ * Consistent spacing system for emergency interfaces
+ * Optimized for touch targets and accessibility
+ */
+
+:root {
+  /* ============================================================================
+     SPACING SCALE - 8px base unit for consistent rhythm
+     ============================================================================ */
+  
+  --emergency-space-0: 0;
+  --emergency-space-1: 0.25rem;   /* 4px */
+  --emergency-space-2: 0.5rem;    /* 8px */
+  --emergency-space-3: 0.75rem;   /* 12px */
+  --emergency-space-4: 1rem;      /* 16px */
+  --emergency-space-5: 1.25rem;   /* 20px */
+  --emergency-space-6: 1.5rem;    /* 24px */
+  --emergency-space-8: 2rem;      /* 32px */
+  --emergency-space-10: 2.5rem;   /* 40px */
+  --emergency-space-12: 3rem;     /* 48px */
+  --emergency-space-16: 4rem;     /* 64px */
+  --emergency-space-20: 5rem;     /* 80px */
+  --emergency-space-24: 6rem;     /* 96px */
+  --emergency-space-32: 8rem;     /* 128px */
+
+  /* ============================================================================
+     COMPONENT SPACING - Semantic spacing for common patterns
+     ============================================================================ */
+  
+  /* Touch targets - Minimum 44px for accessibility */
+  --emergency-touch-target: 2.75rem; /* 44px */
+  
+  /* Component padding */
+  --emergency-padding-xs: var(--emergency-space-2);   /* 8px */
+  --emergency-padding-sm: var(--emergency-space-3);   /* 12px */
+  --emergency-padding-md: var(--emergency-space-4);   /* 16px */
+  --emergency-padding-lg: var(--emergency-space-6);   /* 24px */
+  --emergency-padding-xl: var(--emergency-space-8);   /* 32px */
+  
+  /* Component margins */
+  --emergency-margin-xs: var(--emergency-space-2);    /* 8px */
+  --emergency-margin-sm: var(--emergency-space-3);    /* 12px */
+  --emergency-margin-md: var(--emergency-space-4);    /* 16px */
+  --emergency-margin-lg: var(--emergency-space-6);    /* 24px */
+  --emergency-margin-xl: var(--emergency-space-8);    /* 32px */
+  
+  /* Gap spacing for flexbox/grid */
+  --emergency-gap-xs: var(--emergency-space-2);       /* 8px */
+  --emergency-gap-sm: var(--emergency-space-3);       /* 12px */
+  --emergency-gap-md: var(--emergency-space-4);       /* 16px */
+  --emergency-gap-lg: var(--emergency-space-6);       /* 24px */
+  --emergency-gap-xl: var(--emergency-space-8);       /* 32px */
+
+  /* ============================================================================
+     BORDER RADIUS - Consistent corner rounding
+     ============================================================================ */
+  
+  --emergency-radius-none: 0;
+  --emergency-radius-sm: 0.25rem;     /* 4px */
+  --emergency-radius-md: 0.5rem;      /* 8px */
+  --emergency-radius-lg: 0.75rem;     /* 12px */
+  --emergency-radius-xl: 1rem;        /* 16px */
+  --emergency-radius-2xl: 1.5rem;     /* 24px */
+  --emergency-radius-full: 9999px;    /* Fully rounded */
+
+  /* ============================================================================
+     BORDER WIDTH - Consistent border sizing
+     ============================================================================ */
+  
+  --emergency-border-0: 0;
+  --emergency-border-1: 1px;
+  --emergency-border-2: 2px;
+  --emergency-border-4: 4px;
+  --emergency-border-8: 8px;
+
+  /* ============================================================================
+     Z-INDEX SCALE - Layering system for emergency interfaces
+     ============================================================================ */
+  
+  --emergency-z-base: 0;
+  --emergency-z-dropdown: 1000;
+  --emergency-z-sticky: 1020;
+  --emergency-z-fixed: 1030;
+  --emergency-z-modal-backdrop: 1040;
+  --emergency-z-modal: 1050;
+  --emergency-z-popover: 1060;
+  --emergency-z-tooltip: 1070;
+  --emergency-z-toast: 1080;
+  --emergency-z-emergency-alert: 9999;
+}
+
+/* ============================================================================
+   SPACING UTILITY CLASSES - Quick application of spacing tokens
+   ============================================================================ */
+
+/* Padding utilities */
+.emergency-p-0 { padding: var(--emergency-space-0); }
+.emergency-p-1 { padding: var(--emergency-space-1); }
+.emergency-p-2 { padding: var(--emergency-space-2); }
+.emergency-p-3 { padding: var(--emergency-space-3); }
+.emergency-p-4 { padding: var(--emergency-space-4); }
+.emergency-p-5 { padding: var(--emergency-space-5); }
+.emergency-p-6 { padding: var(--emergency-space-6); }
+.emergency-p-8 { padding: var(--emergency-space-8); }
+
+/* Padding directional */
+.emergency-px-2 { padding-left: var(--emergency-space-2); padding-right: var(--emergency-space-2); }
+.emergency-px-3 { padding-left: var(--emergency-space-3); padding-right: var(--emergency-space-3); }
+.emergency-px-4 { padding-left: var(--emergency-space-4); padding-right: var(--emergency-space-4); }
+.emergency-py-2 { padding-top: var(--emergency-space-2); padding-bottom: var(--emergency-space-2); }
+.emergency-py-3 { padding-top: var(--emergency-space-3); padding-bottom: var(--emergency-space-3); }
+.emergency-py-4 { padding-top: var(--emergency-space-4); padding-bottom: var(--emergency-space-4); }
+
+/* Margin utilities */
+.emergency-m-0 { margin: var(--emergency-space-0); }
+.emergency-m-1 { margin: var(--emergency-space-1); }
+.emergency-m-2 { margin: var(--emergency-space-2); }
+.emergency-m-3 { margin: var(--emergency-space-3); }
+.emergency-m-4 { margin: var(--emergency-space-4); }
+.emergency-m-5 { margin: var(--emergency-space-5); }
+.emergency-m-6 { margin: var(--emergency-space-6); }
+.emergency-m-8 { margin: var(--emergency-space-8); }
+
+/* Margin directional */
+.emergency-mx-2 { margin-left: var(--emergency-space-2); margin-right: var(--emergency-space-2); }
+.emergency-mx-3 { margin-left: var(--emergency-space-3); margin-right: var(--emergency-space-3); }
+.emergency-mx-4 { margin-left: var(--emergency-space-4); margin-right: var(--emergency-space-4); }
+.emergency-my-2 { margin-top: var(--emergency-space-2); margin-bottom: var(--emergency-space-2); }
+.emergency-my-3 { margin-top: var(--emergency-space-3); margin-bottom: var(--emergency-space-3); }
+.emergency-my-4 { margin-top: var(--emergency-space-4); margin-bottom: var(--emergency-space-4); }
+
+/* Gap utilities for flexbox/grid */
+.emergency-gap-2 { gap: var(--emergency-gap-xs); }
+.emergency-gap-3 { gap: var(--emergency-gap-sm); }
+.emergency-gap-4 { gap: var(--emergency-gap-md); }
+.emergency-gap-6 { gap: var(--emergency-gap-lg); }
+.emergency-gap-8 { gap: var(--emergency-gap-xl); }
+
+/* Border radius utilities */
+.emergency-rounded-none { border-radius: var(--emergency-radius-none); }
+.emergency-rounded-sm { border-radius: var(--emergency-radius-sm); }
+.emergency-rounded-md { border-radius: var(--emergency-radius-md); }
+.emergency-rounded-lg { border-radius: var(--emergency-radius-lg); }
+.emergency-rounded-xl { border-radius: var(--emergency-radius-xl); }
+.emergency-rounded-2xl { border-radius: var(--emergency-radius-2xl); }
+.emergency-rounded-full { border-radius: var(--emergency-radius-full); }
+
+/* Border width utilities */
+.emergency-border-0 { border-width: var(--emergency-border-0); }
+.emergency-border-1 { border-width: var(--emergency-border-1); }
+.emergency-border-2 { border-width: var(--emergency-border-2); }
+.emergency-border-4 { border-width: var(--emergency-border-4); }
+
+/* Z-index utilities */
+.emergency-z-base { z-index: var(--emergency-z-base); }
+.emergency-z-dropdown { z-index: var(--emergency-z-dropdown); }
+.emergency-z-sticky { z-index: var(--emergency-z-sticky); }
+.emergency-z-fixed { z-index: var(--emergency-z-fixed); }
+.emergency-z-modal { z-index: var(--emergency-z-modal); }
+.emergency-z-emergency { z-index: var(--emergency-z-emergency-alert); }
+
+/* ============================================================================
+   RESPONSIVE SPACING - Adaptive spacing for different screen sizes
+   ============================================================================ */
+
+/* Mobile spacing adjustments */
+@media (max-width: 768px) {
+  :root {
+    --emergency-padding-responsive-sm: var(--emergency-space-2);
+    --emergency-padding-responsive-md: var(--emergency-space-3);
+    --emergency-padding-responsive-lg: var(--emergency-space-4);
+    --emergency-margin-responsive-sm: var(--emergency-space-2);
+    --emergency-margin-responsive-md: var(--emergency-space-3);
+    --emergency-margin-responsive-lg: var(--emergency-space-4);
+  }
+}
+
+/* Desktop spacing adjustments */
+@media (min-width: 769px) {
+  :root {
+    --emergency-padding-responsive-sm: var(--emergency-space-3);
+    --emergency-padding-responsive-md: var(--emergency-space-4);
+    --emergency-padding-responsive-lg: var(--emergency-space-6);
+    --emergency-margin-responsive-sm: var(--emergency-space-3);
+    --emergency-margin-responsive-md: var(--emergency-space-4);
+    --emergency-margin-responsive-lg: var(--emergency-space-6);
+  }
+}
+
+/* Responsive spacing utilities */
+.emergency-p-responsive-sm { padding: var(--emergency-padding-responsive-sm); }
+.emergency-p-responsive-md { padding: var(--emergency-padding-responsive-md); }
+.emergency-p-responsive-lg { padding: var(--emergency-padding-responsive-lg); }
+.emergency-m-responsive-sm { margin: var(--emergency-margin-responsive-sm); }
+.emergency-m-responsive-md { margin: var(--emergency-margin-responsive-md); }
+.emergency-m-responsive-lg { margin: var(--emergency-margin-responsive-lg); }

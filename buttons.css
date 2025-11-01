@@ -1,0 +1,371 @@
+/**
+ * EMERGENCY UI - BUTTON COMPONENTS
+ * Professional button system for emergency and crisis management interfaces
+ * Optimized for accessibility, touch targets, and high-stress situations
+ */
+
+/* ============================================================================
+   BASE BUTTON STYLES - Foundation for all button variants
+   ============================================================================ */
+
+.emergency-btn {
+  /* Layout and sizing */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--emergency-space-2);
+  min-height: var(--emergency-touch-target);
+  padding: var(--emergency-space-3) var(--emergency-space-4);
+  
+  /* Typography */
+  font-family: var(--emergency-font-primary);
+  font-size: var(--emergency-text-sm);
+  font-weight: var(--emergency-font-medium);
+  line-height: var(--emergency-leading-none);
+  letter-spacing: var(--emergency-tracking-wide);
+  text-decoration: none;
+  white-space: nowrap;
+  
+  /* Visual styling */
+  border: var(--emergency-border-1) solid transparent;
+  border-radius: var(--emergency-radius-lg);
+  cursor: pointer;
+  user-select: none;
+  
+  /* Transitions */
+  transition: var(--emergency-transition-all);
+  
+  /* Focus styles for accessibility */
+  outline: none;
+}
+
+.emergency-btn:focus-visible {
+  box-shadow: var(--emergency-focus-ring);
+}
+
+.emergency-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none !important;
+}
+
+/* ============================================================================
+   BUTTON SIZES - Responsive sizing for different use cases
+   ============================================================================ */
+
+.emergency-btn-xs {
+  min-height: 2rem;
+  padding: var(--emergency-space-1) var(--emergency-space-3);
+  font-size: var(--emergency-text-xs);
+}
+
+.emergency-btn-sm {
+  min-height: 2.25rem;
+  padding: var(--emergency-space-2) var(--emergency-space-3);
+  font-size: var(--emergency-text-sm);
+}
+
+.emergency-btn-md {
+  min-height: var(--emergency-touch-target);
+  padding: var(--emergency-space-3) var(--emergency-space-4);
+  font-size: var(--emergency-text-sm);
+}
+
+.emergency-btn-lg {
+  min-height: 3rem;
+  padding: var(--emergency-space-4) var(--emergency-space-6);
+  font-size: var(--emergency-text-base);
+}
+
+.emergency-btn-xl {
+  min-height: 3.5rem;
+  padding: var(--emergency-space-5) var(--emergency-space-8);
+  font-size: var(--emergency-text-lg);
+}
+
+/* ============================================================================
+   PRIMARY BUTTON - Main action button
+   ============================================================================ */
+
+.emergency-btn-primary {
+  background: var(--emergency-gradient-accent);
+  color: white;
+  border-color: var(--emergency-accent-primary);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+.emergency-btn-primary:hover:not(:disabled) {
+  background: var(--emergency-accent-primary);
+  border-color: var(--emergency-accent-secondary);
+  box-shadow: var(--emergency-shadow-md);
+  transform: translateY(-1px);
+}
+
+.emergency-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+/* ============================================================================
+   SECONDARY BUTTON - Supporting actions
+   ============================================================================ */
+
+.emergency-btn-secondary {
+  background: var(--emergency-bg-secondary);
+  color: var(--emergency-text-primary);
+  border-color: var(--emergency-border-primary);
+}
+
+.emergency-btn-secondary:hover:not(:disabled) {
+  background: var(--emergency-bg-tertiary);
+  border-color: var(--emergency-border-secondary);
+  transform: translateY(-1px);
+}
+
+.emergency-btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+  background: var(--emergency-bg-secondary);
+}
+
+/* ============================================================================
+   CRITICAL BUTTON - Emergency/danger actions
+   ============================================================================ */
+
+.emergency-btn-critical {
+  background: var(--emergency-gradient-critical);
+  color: white;
+  border-color: var(--emergency-critical);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+.emergency-btn-critical:hover:not(:disabled) {
+  background: var(--emergency-critical-hover);
+  border-color: var(--emergency-critical-dark);
+  box-shadow: var(--emergency-shadow-md);
+  transform: translateY(-1px);
+}
+
+.emergency-btn-critical:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+/* ============================================================================
+   WARNING BUTTON - Caution actions
+   ============================================================================ */
+
+.emergency-btn-warning {
+  background: var(--emergency-gradient-warning);
+  color: white;
+  border-color: var(--emergency-warning);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+.emergency-btn-warning:hover:not(:disabled) {
+  background: var(--emergency-warning-hover);
+  border-color: var(--emergency-warning-dark);
+  box-shadow: var(--emergency-shadow-md);
+  transform: translateY(-1px);
+}
+
+.emergency-btn-warning:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+/* ============================================================================
+   SUCCESS BUTTON - Positive actions
+   ============================================================================ */
+
+.emergency-btn-success {
+  background: var(--emergency-gradient-good);
+  color: white;
+  border-color: var(--emergency-good);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+.emergency-btn-success:hover:not(:disabled) {
+  background: var(--emergency-good-hover);
+  border-color: var(--emergency-good-dark);
+  box-shadow: var(--emergency-shadow-md);
+  transform: translateY(-1px);
+}
+
+.emergency-btn-success:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+/* ============================================================================
+   GHOST BUTTON - Minimal styling
+   ============================================================================ */
+
+.emergency-btn-ghost {
+  background: transparent;
+  color: var(--emergency-text-primary);
+  border-color: transparent;
+}
+
+.emergency-btn-ghost:hover:not(:disabled) {
+  background: var(--emergency-bg-secondary);
+  color: var(--emergency-accent-primary);
+}
+
+.emergency-btn-ghost:active:not(:disabled) {
+  background: var(--emergency-bg-tertiary);
+}
+
+/* ============================================================================
+   OUTLINE BUTTON - Bordered styling
+   ============================================================================ */
+
+.emergency-btn-outline {
+  background: transparent;
+  color: var(--emergency-accent-primary);
+  border-color: var(--emergency-accent-primary);
+}
+
+.emergency-btn-outline:hover:not(:disabled) {
+  background: var(--emergency-accent-primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.emergency-btn-outline:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ============================================================================
+   ICON BUTTONS - Buttons with icons
+   ============================================================================ */
+
+.emergency-btn-icon-only {
+  padding: var(--emergency-space-3);
+  min-width: var(--emergency-touch-target);
+  aspect-ratio: 1;
+}
+
+.emergency-btn-icon-left .emergency-btn-icon {
+  margin-right: var(--emergency-space-2);
+}
+
+.emergency-btn-icon-right .emergency-btn-icon {
+  margin-left: var(--emergency-space-2);
+}
+
+.emergency-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   BUTTON GROUPS - Connected button sets
+   ============================================================================ */
+
+.emergency-btn-group {
+  display: inline-flex;
+  border-radius: var(--emergency-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+.emergency-btn-group .emergency-btn {
+  border-radius: 0;
+  border-right-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.emergency-btn-group .emergency-btn:first-child {
+  border-top-left-radius: var(--emergency-radius-lg);
+  border-bottom-left-radius: var(--emergency-radius-lg);
+}
+
+.emergency-btn-group .emergency-btn:last-child {
+  border-top-right-radius: var(--emergency-radius-lg);
+  border-bottom-right-radius: var(--emergency-radius-lg);
+  border-right-width: var(--emergency-border-1);
+}
+
+.emergency-btn-group .emergency-btn:hover,
+.emergency-btn-group .emergency-btn:focus {
+  z-index: 2;
+}
+
+/* ============================================================================
+   LOADING STATES - Buttons with loading indicators
+   ============================================================================ */
+
+.emergency-btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.emergency-btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin: -0.5rem 0 0 -0.5rem;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: emergency-spin 1s linear infinite;
+}
+
+/* ============================================================================
+   RESPONSIVE BUTTON BEHAVIOR
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .emergency-btn {
+    min-height: 3rem; /* Larger touch targets on mobile */
+    padding: var(--emergency-space-4) var(--emergency-space-5);
+  }
+  
+  .emergency-btn-sm {
+    min-height: 2.5rem;
+    padding: var(--emergency-space-3) var(--emergency-space-4);
+  }
+  
+  .emergency-btn-xs {
+    min-height: 2.25rem;
+    padding: var(--emergency-space-2) var(--emergency-space-3);
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .emergency-btn {
+    border-width: 2px;
+  }
+  
+  .emergency-btn-primary,
+  .emergency-btn-critical,
+  .emergency-btn-warning,
+  .emergency-btn-success {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .emergency-btn {
+    transition: none;
+  }
+  
+  .emergency-btn:hover:not(:disabled) {
+    transform: none;
+  }
+}

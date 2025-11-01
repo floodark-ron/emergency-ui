@@ -1,0 +1,372 @@
+/**
+ * EMERGENCY UI - PANEL COMPONENTS
+ * Professional panel system for emergency and crisis management interfaces
+ * Optimized for data display, real-time updates, and mobile responsiveness
+ */
+
+/* ============================================================================
+   BASE PANEL STYLES - Foundation for all panel variants
+   ============================================================================ */
+
+.emergency-panel {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  
+  /* Visual styling */
+  background: var(--emergency-gradient-primary);
+  backdrop-filter: blur(16px) saturate(150%);
+  border: var(--emergency-border-1) solid var(--emergency-border-primary);
+  border-radius: var(--emergency-radius-xl);
+  box-shadow: var(--emergency-shadow-lg), 0 0 0 1px rgba(56, 72, 95, 0.3);
+  
+  /* Spacing */
+  overflow: hidden;
+  
+  /* Animation */
+  animation: emergency-slide-in var(--emergency-duration-normal) var(--emergency-ease-smooth);
+}
+
+/* ============================================================================
+   PANEL HEADER - Title and controls section
+   ============================================================================ */
+
+.emergency-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--emergency-space-4) var(--emergency-space-6);
+  border-bottom: var(--emergency-border-1) solid var(--emergency-border-primary);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.emergency-panel-title {
+  display: flex;
+  align-items: center;
+  gap: var(--emergency-space-3);
+  margin: 0;
+  font-family: var(--emergency-font-display);
+  font-size: var(--emergency-text-lg);
+  font-weight: var(--emergency-font-semibold);
+  color: var(--emergency-text-primary);
+  letter-spacing: var(--emergency-tracking-wide);
+}
+
+.emergency-panel-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--emergency-space-1) var(--emergency-space-2);
+  background: rgba(96, 165, 250, 0.12);
+  border: var(--emergency-border-1) solid rgba(96, 165, 250, 0.3);
+  border-radius: var(--emergency-radius-full);
+  font-size: var(--emergency-text-xs);
+  font-weight: var(--emergency-font-medium);
+  color: #bae6fd;
+  letter-spacing: var(--emergency-tracking-wider);
+  text-transform: uppercase;
+}
+
+.emergency-panel-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--emergency-space-2);
+}
+
+/* ============================================================================
+   PANEL CONTENT - Main content area
+   ============================================================================ */
+
+.emergency-panel-content {
+  flex: 1;
+  padding: var(--emergency-space-6);
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.emergency-panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.emergency-panel-content::-webkit-scrollbar-track {
+  background: var(--emergency-bg-secondary);
+}
+
+.emergency-panel-content::-webkit-scrollbar-thumb {
+  background: var(--emergency-border-secondary);
+  border-radius: var(--emergency-radius-sm);
+}
+
+.emergency-panel-content::-webkit-scrollbar-thumb:hover {
+  background: var(--emergency-border-focus);
+}
+
+/* ============================================================================
+   PANEL FOOTER - Actions and status section
+   ============================================================================ */
+
+.emergency-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--emergency-space-4) var(--emergency-space-6);
+  border-top: var(--emergency-border-1) solid var(--emergency-border-primary);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================================================
+   PANEL SIZES - Different panel dimensions
+   ============================================================================ */
+
+.emergency-panel-sm {
+  width: min(400px, calc(100vw - 32px));
+  max-height: 60vh;
+}
+
+.emergency-panel-md {
+  width: min(600px, calc(100vw - 32px));
+  max-height: 70vh;
+}
+
+.emergency-panel-lg {
+  width: min(800px, calc(100vw - 32px));
+  max-height: 80vh;
+}
+
+.emergency-panel-xl {
+  width: min(1200px, calc(100vw - 32px));
+  max-height: 90vh;
+}
+
+.emergency-panel-full {
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
+}
+
+/* ============================================================================
+   PANEL POSITIONING - Fixed and modal panels
+   ============================================================================ */
+
+.emergency-panel-fixed {
+  position: fixed;
+  z-index: var(--emergency-z-fixed);
+}
+
+.emergency-panel-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--emergency-z-modal);
+}
+
+.emergency-panel-top-right {
+  position: fixed;
+  top: var(--emergency-space-4);
+  right: var(--emergency-space-4);
+  z-index: var(--emergency-z-fixed);
+}
+
+.emergency-panel-bottom-right {
+  position: fixed;
+  bottom: var(--emergency-space-4);
+  right: var(--emergency-space-4);
+  z-index: var(--emergency-z-fixed);
+}
+
+/* ============================================================================
+   COLLAPSIBLE PANELS - Expandable content sections
+   ============================================================================ */
+
+.emergency-panel-collapsible .emergency-panel-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.emergency-panel-collapsible .emergency-panel-header:hover {
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.emergency-panel-collapse-icon {
+  transition: var(--emergency-transition-transform);
+}
+
+.emergency-panel-collapsed .emergency-panel-collapse-icon {
+  transform: rotate(-90deg);
+}
+
+.emergency-panel-collapsed .emergency-panel-content {
+  display: none;
+}
+
+.emergency-panel-collapsed .emergency-panel-footer {
+  display: none;
+}
+
+/* ============================================================================
+   PANEL VARIANTS - Different visual styles
+   ============================================================================ */
+
+/* Critical panel - For emergency alerts */
+.emergency-panel-critical {
+  border-color: var(--emergency-critical);
+  box-shadow: var(--emergency-shadow-lg), 0 0 0 1px var(--emergency-critical);
+}
+
+.emergency-panel-critical .emergency-panel-header {
+  background: rgba(239, 68, 68, 0.1);
+  border-bottom-color: var(--emergency-critical);
+}
+
+.emergency-panel-critical .emergency-panel-badge {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: var(--emergency-critical);
+  color: #fecaca;
+}
+
+/* Warning panel - For caution alerts */
+.emergency-panel-warning {
+  border-color: var(--emergency-warning);
+  box-shadow: var(--emergency-shadow-lg), 0 0 0 1px var(--emergency-warning);
+}
+
+.emergency-panel-warning .emergency-panel-header {
+  background: rgba(245, 158, 11, 0.1);
+  border-bottom-color: var(--emergency-warning);
+}
+
+.emergency-panel-warning .emergency-panel-badge {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: var(--emergency-warning);
+  color: #fed7aa;
+}
+
+/* Success panel - For positive status */
+.emergency-panel-success {
+  border-color: var(--emergency-good);
+  box-shadow: var(--emergency-shadow-lg), 0 0 0 1px var(--emergency-good);
+}
+
+.emergency-panel-success .emergency-panel-header {
+  background: rgba(34, 197, 94, 0.1);
+  border-bottom-color: var(--emergency-good);
+}
+
+.emergency-panel-success .emergency-panel-badge {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: var(--emergency-good);
+  color: #bbf7d0;
+}
+
+/* ============================================================================
+   PANEL GRID LAYOUTS - Multi-column panel arrangements
+   ============================================================================ */
+
+.emergency-panel-grid {
+  display: grid;
+  gap: var(--emergency-space-4);
+  padding: var(--emergency-space-6);
+}
+
+.emergency-panel-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.emergency-panel-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.emergency-panel-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ============================================================================
+   MODAL BACKDROP - Background overlay for modal panels
+   ============================================================================ */
+
+.emergency-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: var(--emergency-z-modal-backdrop);
+  animation: emergency-fade-in var(--emergency-duration-fast) var(--emergency-ease-out);
+}
+
+/* ============================================================================
+   RESPONSIVE PANEL BEHAVIOR
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .emergency-panel {
+    border-radius: var(--emergency-radius-lg);
+  }
+  
+  .emergency-panel-header,
+  .emergency-panel-content,
+  .emergency-panel-footer {
+    padding: var(--emergency-space-4);
+  }
+  
+  .emergency-panel-grid-2,
+  .emergency-panel-grid-3,
+  .emergency-panel-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .emergency-panel-modal {
+    width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    top: var(--emergency-space-4);
+    left: var(--emergency-space-4);
+    transform: none;
+  }
+  
+  .emergency-panel-top-right,
+  .emergency-panel-bottom-right {
+    top: var(--emergency-space-2);
+    right: var(--emergency-space-2);
+    left: var(--emergency-space-2);
+    width: auto;
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================ */
+
+/* Focus management for modal panels */
+.emergency-panel-modal:focus {
+  outline: none;
+}
+
+.emergency-panel-modal[aria-hidden="true"] {
+  display: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .emergency-panel {
+    border-width: 2px;
+  }
+  
+  .emergency-panel-header,
+  .emergency-panel-footer {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .emergency-panel {
+    animation: none;
+  }
+  
+  .emergency-modal-backdrop {
+    animation: none;
+  }
+}

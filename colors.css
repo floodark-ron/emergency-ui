@@ -1,0 +1,150 @@
+/**
+ * EMERGENCY UI - COLOR TOKENS
+ * Professional color system for emergency and crisis management interfaces
+ * Optimized for readability under stress and accessibility compliance
+ */
+
+:root {
+  /* ============================================================================
+     EMERGENCY SEVERITY SCALE - Core crisis communication colors
+     ============================================================================ */
+  
+  /* Critical/Danger - High urgency, immediate action required */
+  --emergency-critical: #ef4444;
+  --emergency-critical-hover: #dc2626;
+  --emergency-critical-light: #fecaca;
+  --emergency-critical-dark: #b91c1c;
+  
+  /* Warning/Caution - Elevated risk, attention needed */
+  --emergency-warning: #f59e0b;
+  --emergency-warning-hover: #d97706;
+  --emergency-warning-light: #fed7aa;
+  --emergency-warning-dark: #b45309;
+  
+  /* Good/Safe - Normal conditions, all clear */
+  --emergency-good: #22c55e;
+  --emergency-good-hover: #16a34a;
+  --emergency-good-light: #bbf7d0;
+  --emergency-good-dark: #15803d;
+  
+  /* Info/Advisory - General information, low priority */
+  --emergency-info: #60a5fa;
+  --emergency-info-hover: #3b82f6;
+  --emergency-info-light: #dbeafe;
+  --emergency-info-dark: #1d4ed8;
+
+  /* ============================================================================
+     NEUTRAL DARK THEME - Professional emergency interface foundation
+     ============================================================================ */
+  
+  /* Background layers - Deep, calming dark tones */
+  --emergency-bg-primary: #0b1220;    /* Deepest background */
+  --emergency-bg-secondary: #0f172a;  /* Card/panel background */
+  --emergency-bg-tertiary: #1e293b;   /* Elevated elements */
+  --emergency-bg-elevated: #334155;   /* Highest elevation */
+  
+  /* Surface colors - Interactive elements */
+  --emergency-surface: #0f172a;
+  --emergency-surface-hover: #1e293b;
+  --emergency-surface-active: #334155;
+  --emergency-surface-disabled: #475569;
+  
+  /* Border colors - Subtle separation */
+  --emergency-border-primary: #223043;
+  --emergency-border-secondary: #334155;
+  --emergency-border-focus: #60a5fa;
+  --emergency-border-error: #ef4444;
+  
+  /* Text colors - High contrast for readability */
+  --emergency-text-primary: #e2e8f0;   /* Main text */
+  --emergency-text-secondary: #cbd5e1; /* Secondary text */
+  --emergency-text-muted: #94a3b8;     /* Muted/disabled text */
+  --emergency-text-inverse: #0f172a;   /* Text on light backgrounds */
+  
+  /* Accent colors - Brand and interactive elements */
+  --emergency-accent-primary: #60a5fa;
+  --emergency-accent-secondary: #38bdf8;
+  --emergency-accent-tertiary: #06b6d4;
+
+  /* ============================================================================
+     SHADOWS & ELEVATION - Depth and hierarchy
+     ============================================================================ */
+  
+  --emergency-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --emergency-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.35);
+  --emergency-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --emergency-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.45);
+  
+  /* Focus ring for accessibility */
+  --emergency-focus-ring: 0 0 0 3px rgba(96, 165, 250, 0.3);
+  
+  /* ============================================================================
+     GRADIENTS - Premium visual effects
+     ============================================================================ */
+  
+  --emergency-gradient-primary: linear-gradient(145deg, rgba(17,25,39,0.95), rgba(15,23,42,0.98));
+  --emergency-gradient-accent: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  --emergency-gradient-critical: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --emergency-gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --emergency-gradient-good: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+/* ============================================================================
+   ACCESSIBILITY OVERRIDES - Respect user preferences
+   ============================================================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --emergency-text-primary: #ffffff;
+    --emergency-text-secondary: #f1f5f9;
+    --emergency-border-primary: #64748b;
+    --emergency-border-secondary: #94a3b8;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --emergency-transition-duration: 0ms;
+  }
+}
+
+/* Light theme override (for systems that require it) */
+@media (prefers-color-scheme: light) {
+  .emergency-light-theme {
+    --emergency-bg-primary: #ffffff;
+    --emergency-bg-secondary: #f8fafc;
+    --emergency-bg-tertiary: #f1f5f9;
+    --emergency-text-primary: #0f172a;
+    --emergency-text-secondary: #334155;
+    --emergency-text-muted: #64748b;
+    --emergency-border-primary: #e2e8f0;
+    --emergency-border-secondary: #cbd5e1;
+  }
+}
+
+/* ============================================================================
+   COLOR UTILITY CLASSES - Quick application of color tokens
+   ============================================================================ */
+
+.emergency-text-critical { color: var(--emergency-critical); }
+.emergency-text-warning { color: var(--emergency-warning); }
+.emergency-text-good { color: var(--emergency-good); }
+.emergency-text-info { color: var(--emergency-info); }
+.emergency-text-primary { color: var(--emergency-text-primary); }
+.emergency-text-secondary { color: var(--emergency-text-secondary); }
+.emergency-text-muted { color: var(--emergency-text-muted); }
+
+.emergency-bg-critical { background-color: var(--emergency-critical); }
+.emergency-bg-warning { background-color: var(--emergency-warning); }
+.emergency-bg-good { background-color: var(--emergency-good); }
+.emergency-bg-info { background-color: var(--emergency-info); }
+.emergency-bg-primary { background-color: var(--emergency-bg-primary); }
+.emergency-bg-secondary { background-color: var(--emergency-bg-secondary); }
+
+.emergency-border-critical { border-color: var(--emergency-critical); }
+.emergency-border-warning { border-color: var(--emergency-warning); }
+.emergency-border-good { border-color: var(--emergency-good); }
+.emergency-border-info { border-color: var(--emergency-info); }
+.emergency-border-primary { border-color: var(--emergency-border-primary); }

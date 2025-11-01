@@ -1,0 +1,312 @@
+/**
+ * EMERGENCY UI - ANIMATION TOKENS
+ * Animation system for emergency interfaces with accessibility considerations
+ * Optimized for real-time updates and crisis communication
+ */
+
+:root {
+  /* ============================================================================
+     TIMING FUNCTIONS - Smooth, purposeful motion
+     ============================================================================ */
+  
+  /* Standard easing curves */
+  --emergency-ease-linear: linear;
+  --emergency-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --emergency-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --emergency-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Emergency-specific easing - Purposeful and calm */
+  --emergency-ease-smooth: cubic-bezier(0.4, 0.14, 0.3, 1);
+  --emergency-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --emergency-ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+  /* ============================================================================
+     DURATION SCALE - Consistent timing for emergency interfaces
+     ============================================================================ */
+  
+  --emergency-duration-instant: 0ms;
+  --emergency-duration-fast: 150ms;
+  --emergency-duration-normal: 250ms;
+  --emergency-duration-slow: 350ms;
+  --emergency-duration-slower: 500ms;
+  --emergency-duration-slowest: 750ms;
+
+  /* ============================================================================
+     TRANSITION PRESETS - Common transition patterns
+     ============================================================================ */
+  
+  --emergency-transition-all: all var(--emergency-duration-normal) var(--emergency-ease-smooth);
+  --emergency-transition-colors: color var(--emergency-duration-fast) var(--emergency-ease-out),
+                                background-color var(--emergency-duration-fast) var(--emergency-ease-out),
+                                border-color var(--emergency-duration-fast) var(--emergency-ease-out);
+  --emergency-transition-transform: transform var(--emergency-duration-normal) var(--emergency-ease-smooth);
+  --emergency-transition-opacity: opacity var(--emergency-duration-fast) var(--emergency-ease-out);
+  --emergency-transition-shadow: box-shadow var(--emergency-duration-normal) var(--emergency-ease-smooth);
+
+  /* ============================================================================
+     ANIMATION DELAYS - Staggered animations for emergency sequences
+     ============================================================================ */
+  
+  --emergency-delay-0: 0ms;
+  --emergency-delay-75: 75ms;
+  --emergency-delay-100: 100ms;
+  --emergency-delay-150: 150ms;
+  --emergency-delay-200: 200ms;
+  --emergency-delay-300: 300ms;
+  --emergency-delay-500: 500ms;
+  --emergency-delay-700: 700ms;
+  --emergency-delay-1000: 1000ms;
+}
+
+/* ============================================================================
+   KEYFRAME ANIMATIONS - Emergency-specific motion patterns
+   ============================================================================ */
+
+/* Panel slide-in animation - Smooth entry for emergency panels */
+@keyframes emergency-slide-in {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Alert pulse animation - Attention-grabbing for critical alerts */
+@keyframes emergency-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* Loading spinner - Calm loading indicator */
+@keyframes emergency-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in animation - Gentle content appearance */
+@keyframes emergency-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale in animation - Smooth modal/popup entry */
+@keyframes emergency-scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Shake animation - Error indication */
+@keyframes emergency-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Glow animation - Emergency status indication */
+@keyframes emergency-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--emergency-critical);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--emergency-critical), 0 0 30px var(--emergency-critical);
+  }
+}
+
+/* Progress bar animation - Loading/processing indication */
+@keyframes emergency-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================================================================
+   ANIMATION UTILITY CLASSES - Quick application of animations
+   ============================================================================ */
+
+/* Transition utilities */
+.emergency-transition-all { transition: var(--emergency-transition-all); }
+.emergency-transition-colors { transition: var(--emergency-transition-colors); }
+.emergency-transition-transform { transition: var(--emergency-transition-transform); }
+.emergency-transition-opacity { transition: var(--emergency-transition-opacity); }
+.emergency-transition-shadow { transition: var(--emergency-transition-shadow); }
+.emergency-transition-none { transition: none; }
+
+/* Duration utilities */
+.emergency-duration-fast { transition-duration: var(--emergency-duration-fast); }
+.emergency-duration-normal { transition-duration: var(--emergency-duration-normal); }
+.emergency-duration-slow { transition-duration: var(--emergency-duration-slow); }
+
+/* Animation utilities */
+.emergency-animate-slide-in {
+  animation: emergency-slide-in var(--emergency-duration-normal) var(--emergency-ease-smooth);
+}
+
+.emergency-animate-pulse {
+  animation: emergency-pulse 2s var(--emergency-ease-in-out) infinite;
+}
+
+.emergency-animate-spin {
+  animation: emergency-spin 1s var(--emergency-ease-linear) infinite;
+}
+
+.emergency-animate-fade-in {
+  animation: emergency-fade-in var(--emergency-duration-normal) var(--emergency-ease-out);
+}
+
+.emergency-animate-scale-in {
+  animation: emergency-scale-in var(--emergency-duration-normal) var(--emergency-ease-smooth);
+}
+
+.emergency-animate-shake {
+  animation: emergency-shake 0.5s var(--emergency-ease-in-out);
+}
+
+.emergency-animate-glow {
+  animation: emergency-glow 2s var(--emergency-ease-in-out) infinite;
+}
+
+/* Hover animations */
+.emergency-hover-lift {
+  transition: var(--emergency-transition-transform);
+}
+
+.emergency-hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.emergency-hover-scale {
+  transition: var(--emergency-transition-transform);
+}
+
+.emergency-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.emergency-hover-glow {
+  transition: var(--emergency-transition-shadow);
+}
+
+.emergency-hover-glow:hover {
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+}
+
+/* ============================================================================
+   ACCESSIBILITY CONSIDERATIONS - Respect user preferences
+   ============================================================================ */
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Override emergency animation utilities */
+  .emergency-animate-slide-in,
+  .emergency-animate-pulse,
+  .emergency-animate-spin,
+  .emergency-animate-fade-in,
+  .emergency-animate-scale-in,
+  .emergency-animate-shake,
+  .emergency-animate-glow {
+    animation: none;
+  }
+  
+  /* Keep essential emergency animations but make them instant */
+  .emergency-animate-pulse {
+    animation: emergency-pulse 0.01ms linear;
+  }
+}
+
+/* High contrast mode - Simplify animations */
+@media (prefers-contrast: high) {
+  .emergency-animate-glow,
+  .emergency-hover-glow {
+    animation: none;
+    box-shadow: none;
+  }
+  
+  .emergency-hover-glow:hover {
+    box-shadow: none;
+    border: 2px solid var(--emergency-accent-primary);
+  }
+}
+
+/* ============================================================================
+   EMERGENCY-SPECIFIC ANIMATION PATTERNS
+   ============================================================================ */
+
+/* Critical alert animation - Immediate attention */
+.emergency-critical-alert {
+  animation: emergency-pulse 1s var(--emergency-ease-in-out) infinite,
+             emergency-glow 2s var(--emergency-ease-in-out) infinite;
+}
+
+/* Loading state for emergency data */
+.emergency-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(96, 165, 250, 0.1),
+    transparent
+  );
+  animation: emergency-progress 1.5s var(--emergency-ease-in-out) infinite;
+}
+
+/* Staggered list animations for emergency data */
+.emergency-stagger-children > * {
+  animation: emergency-fade-in var(--emergency-duration-normal) var(--emergency-ease-out);
+}
+
+.emergency-stagger-children > *:nth-child(1) { animation-delay: var(--emergency-delay-0); }
+.emergency-stagger-children > *:nth-child(2) { animation-delay: var(--emergency-delay-75); }
+.emergency-stagger-children > *:nth-child(3) { animation-delay: var(--emergency-delay-150); }
+.emergency-stagger-children > *:nth-child(4) { animation-delay: var(--emergency-delay-200); }
+.emergency-stagger-children > *:nth-child(5) { animation-delay: var(--emergency-delay-300); }

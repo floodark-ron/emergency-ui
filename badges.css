@@ -1,0 +1,389 @@
+/**
+ * EMERGENCY UI - BADGE COMPONENTS
+ * Status indicators and severity badges for emergency interfaces
+ * Optimized for quick visual recognition and accessibility
+ */
+
+/* ============================================================================
+   BASE BADGE STYLES - Foundation for all badge variants
+   ============================================================================ */
+
+.emergency-badge {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--emergency-space-1);
+  
+  /* Sizing */
+  padding: var(--emergency-space-1) var(--emergency-space-2);
+  min-height: 1.5rem;
+  
+  /* Typography */
+  font-family: var(--emergency-font-primary);
+  font-size: var(--emergency-text-xs);
+  font-weight: var(--emergency-font-medium);
+  line-height: var(--emergency-leading-none);
+  letter-spacing: var(--emergency-tracking-wider);
+  text-transform: uppercase;
+  white-space: nowrap;
+  
+  /* Visual styling */
+  border: var(--emergency-border-1) solid transparent;
+  border-radius: var(--emergency-radius-full);
+  
+  /* Animation */
+  transition: var(--emergency-transition-all);
+}
+
+/* ============================================================================
+   BADGE SIZES - Different badge dimensions
+   ============================================================================ */
+
+.emergency-badge-xs {
+  padding: var(--emergency-space-1) var(--emergency-space-2);
+  min-height: 1.25rem;
+  font-size: 0.625rem; /* 10px */
+}
+
+.emergency-badge-sm {
+  padding: var(--emergency-space-1) var(--emergency-space-2);
+  min-height: 1.5rem;
+  font-size: var(--emergency-text-xs);
+}
+
+.emergency-badge-md {
+  padding: var(--emergency-space-2) var(--emergency-space-3);
+  min-height: 1.75rem;
+  font-size: var(--emergency-text-xs);
+}
+
+.emergency-badge-lg {
+  padding: var(--emergency-space-2) var(--emergency-space-4);
+  min-height: 2rem;
+  font-size: var(--emergency-text-sm);
+}
+
+/* ============================================================================
+   SEVERITY BADGES - Emergency status indicators
+   ============================================================================ */
+
+/* Critical severity - Immediate danger */
+.emergency-badge-critical {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--emergency-critical);
+  color: #fecaca;
+}
+
+.emergency-badge-critical.emergency-badge-solid {
+  background: var(--emergency-critical);
+  color: white;
+}
+
+.emergency-badge-critical.emergency-badge-pulse {
+  animation: emergency-pulse 2s var(--emergency-ease-in-out) infinite;
+}
+
+/* Warning severity - Elevated risk */
+.emergency-badge-warning {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--emergency-warning);
+  color: #fed7aa;
+}
+
+.emergency-badge-warning.emergency-badge-solid {
+  background: var(--emergency-warning);
+  color: white;
+}
+
+/* Good/Safe severity - Normal conditions */
+.emergency-badge-good {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: var(--emergency-good);
+  color: #bbf7d0;
+}
+
+.emergency-badge-good.emergency-badge-solid {
+  background: var(--emergency-good);
+  color: white;
+}
+
+/* Info severity - General information */
+.emergency-badge-info {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: var(--emergency-info);
+  color: #dbeafe;
+}
+
+.emergency-badge-info.emergency-badge-solid {
+  background: var(--emergency-info);
+  color: white;
+}
+
+/* ============================================================================
+   BADGE VARIANTS - Different visual styles
+   ============================================================================ */
+
+/* Outline badge - Bordered style */
+.emergency-badge-outline {
+  background: transparent;
+  border-width: var(--emergency-border-1);
+}
+
+/* Solid badge - Filled background */
+.emergency-badge-solid {
+  border-color: transparent;
+}
+
+/* Ghost badge - Minimal styling */
+.emergency-badge-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--emergency-text-secondary);
+}
+
+/* Dot badge - With status indicator */
+.emergency-badge-dot::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: var(--emergency-space-1);
+}
+
+/* ============================================================================
+   INTERACTIVE BADGES - Clickable status indicators
+   ============================================================================ */
+
+.emergency-badge-interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.emergency-badge-interactive:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--emergency-shadow-sm);
+}
+
+.emergency-badge-interactive:active {
+  transform: translateY(0);
+}
+
+.emergency-badge-interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--emergency-focus-ring);
+}
+
+/* ============================================================================
+   BADGE WITH ICONS - Icon + text combinations
+   ============================================================================ */
+
+.emergency-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.emergency-badge-icon-left .emergency-badge-icon {
+  margin-right: var(--emergency-space-1);
+}
+
+.emergency-badge-icon-right .emergency-badge-icon {
+  margin-left: var(--emergency-space-1);
+}
+
+.emergency-badge-icon-only {
+  padding: var(--emergency-space-1);
+  min-width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+/* ============================================================================
+   BADGE GROUPS - Connected badge sets
+   ============================================================================ */
+
+.emergency-badge-group {
+  display: inline-flex;
+  border-radius: var(--emergency-radius-full);
+  overflow: hidden;
+}
+
+.emergency-badge-group .emergency-badge {
+  border-radius: 0;
+  border-right-width: 0;
+  margin: 0;
+}
+
+.emergency-badge-group .emergency-badge:first-child {
+  border-top-left-radius: var(--emergency-radius-full);
+  border-bottom-left-radius: var(--emergency-radius-full);
+}
+
+.emergency-badge-group .emergency-badge:last-child {
+  border-top-right-radius: var(--emergency-radius-full);
+  border-bottom-right-radius: var(--emergency-radius-full);
+  border-right-width: var(--emergency-border-1);
+}
+
+/* ============================================================================
+   NOTIFICATION BADGES - Count indicators
+   ============================================================================ */
+
+.emergency-badge-notification {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 var(--emergency-space-1);
+  background: var(--emergency-critical);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: var(--emergency-font-bold);
+  border: 2px solid var(--emergency-bg-primary);
+  border-radius: var(--emergency-radius-full);
+  z-index: 1;
+}
+
+.emergency-badge-notification-large {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--emergency-text-xs);
+}
+
+/* ============================================================================
+   STATUS BADGES - System status indicators
+   ============================================================================ */
+
+.emergency-badge-online {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: var(--emergency-good);
+  color: #bbf7d0;
+}
+
+.emergency-badge-offline {
+  background: rgba(107, 114, 128, 0.15);
+  border-color: #6b7280;
+  color: #d1d5db;
+}
+
+.emergency-badge-loading {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: var(--emergency-info);
+  color: #dbeafe;
+  position: relative;
+}
+
+.emergency-badge-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: var(--emergency-space-2);
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: -0.375rem;
+  border: 1px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: emergency-spin 1s linear infinite;
+}
+
+/* ============================================================================
+   EMERGENCY-SPECIFIC BADGES - Disaster type indicators
+   ============================================================================ */
+
+.emergency-badge-earthquake {
+  background: rgba(139, 69, 19, 0.15);
+  border-color: #8b4513;
+  color: #deb887;
+}
+
+.emergency-badge-fire {
+  background: rgba(255, 69, 0, 0.15);
+  border-color: #ff4500;
+  color: #ffa07a;
+}
+
+.emergency-badge-flood {
+  background: rgba(30, 144, 255, 0.15);
+  border-color: #1e90ff;
+  color: #87ceeb;
+}
+
+.emergency-badge-hurricane {
+  background: rgba(75, 0, 130, 0.15);
+  border-color: #4b0082;
+  color: #dda0dd;
+}
+
+.emergency-badge-tornado {
+  background: rgba(105, 105, 105, 0.15);
+  border-color: #696969;
+  color: #c0c0c0;
+}
+
+/* ============================================================================
+   RESPONSIVE BADGE BEHAVIOR
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .emergency-badge {
+    font-size: var(--emergency-text-xs);
+    padding: var(--emergency-space-1) var(--emergency-space-3);
+  }
+  
+  .emergency-badge-lg {
+    font-size: var(--emergency-text-sm);
+    padding: var(--emergency-space-2) var(--emergency-space-4);
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .emergency-badge {
+    border-width: 2px;
+  }
+  
+  .emergency-badge-solid {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .emergency-badge-pulse {
+    animation: none;
+  }
+  
+  .emergency-badge-loading::after {
+    animation: none;
+  }
+  
+  .emergency-badge-interactive:hover {
+    transform: none;
+  }
+}
+
+/* Screen reader support */
+.emergency-badge[aria-label] {
+  position: relative;
+}
+
+.emergency-badge-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
