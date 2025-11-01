@@ -48,7 +48,7 @@ npm install @ronfloodark/emergency-ui
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="node_modules/@floodark/emergency-ui/dist/emergency-ui.css">
+  <link rel="stylesheet" href="node_modules/@floodark-ron/emergency-ui/dist/emergency-ui.css">
 </head>
 <body>
   <!-- Emergency Alert Button -->
@@ -75,14 +75,14 @@ npm install @ronfloodark/emergency-ui
 ### CSS Import
 
 ```css
-@import '@floodark/emergency-ui/dist/emergency-ui.css';
+@import '@floodark-ron/emergency-ui/dist/emergency-ui.css';
 ```
 
 ### JavaScript Frameworks
 
 ```jsx
 // React
-import '@floodark/emergency-ui/dist/emergency-ui.css';
+import '@floodark=ron/emergency-ui/dist/emergency-ui.css';
 
 function EmergencyAlert() {
   return (
@@ -102,7 +102,7 @@ function EmergencyAlert() {
 </template>
 
 <style>
-@import '@floodark/emergency-ui/dist/emergency-ui.css';
+@import '@floodark-ron/emergency-ui/dist/emergency-ui.css';
 </style>
 ```
 
