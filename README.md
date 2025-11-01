@@ -352,8 +352,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/floodark/emergency-ui/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/floodark/emergency-ui/discussions)
+- **Issues**: [GitHub Issues](https://github.com/floodark-ron/emergency-ui/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/floodark-ron/emergency-ui/discussions)
 
 ---
 
