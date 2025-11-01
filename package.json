@@ -1,0 +1,75 @@
+{
+  "name": "@floodark/emergency-ui",
+  "version": "1.0.0",
+  "description": "Professional emergency interface design system for disaster management and crisis response applications",
+  "main": "dist/emergency-ui.css",
+  "module": "dist/emergency-ui.esm.css",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:css && npm run build:types",
+    "build:css": "postcss src/emergency-ui.css -o dist/emergency-ui.css --map",
+    "build:minified": "postcss src/emergency-ui.css -o dist/emergency-ui.min.css --env production",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "dev": "postcss src/emergency-ui.css -o dist/emergency-ui.css --map --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "jest",
+    "lint": "stylelint 'src/**/*.css'",
+    "format": "prettier --write 'src/**/*.{css,js,ts,md}'",
+    "prepublishOnly": "npm run build && npm run build:minified"
+  },
+  "keywords": [
+    "emergency",
+    "disaster",
+    "crisis",
+    "ui",
+    "design-system",
+    "css",
+    "components",
+    "accessibility",
+    "responsive",
+    "dark-theme"
+  ],
+  "author": "FloodArk AI <opensource@floodark.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floodark/emergency-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floodark/emergency-ui/issues"
+  },
+  "homepage": "https://emergency-ui.floodark.com",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.0",
+    "@storybook/addon-a11y": "^7.5.0",
+    "@storybook/html": "^7.5.0",
+    "@types/node": "^20.0.0",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^6.0.0",
+    "jest": "^29.0.0",
+    "postcss": "^8.4.0",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/floodark"
+  }
+}
