@@ -2,7 +2,7 @@
 
 A professional, accessible design system for emergency and crisis management interfaces. Built by FloodArk AI for disaster response applications.
 
-[![npm version](https://badge.fury.io/js/%40floodark%2Femergency-ui.svg)](https://badge.fury.io/js/%40floodark%2Femergency-ui)
+[![npm version](https://badge.fury.io/js/%40ronfloodark%2Femergency-ui.svg)](https://badge.fury.io/js/%40ronfloodark%2Femergency-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![WCAG AA](https://img.shields.io/badge/WCAG-AA-green.svg)](https://www.w3.org/WAI/WCAG21/quickref/)
 
@@ -39,7 +39,7 @@ Emergency UI provides a comprehensive design system specifically crafted for:
 ### Installation
 
 ```bash
-npm install @floodark/emergency-ui
+npm install @ronfloodark/emergency-ui
 ```
 
 ### Basic Usage
