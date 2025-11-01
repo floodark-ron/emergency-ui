@@ -1,0 +1,319 @@
+/**
+ * EMERGENCY UI - COMPLETE DESIGN SYSTEM
+ * Professional emergency interface design system for disaster management
+ * and crisis response applications
+ * 
+ * @version 1.0.0
+ * @author FloodArk AI
+ * @license MIT
+ */
+
+/* ============================================================================
+   DESIGN TOKENS - Core design system foundation
+   ============================================================================ */
+
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/animations.css';
+
+/* ============================================================================
+   COMPONENTS - Reusable UI components
+   ============================================================================ */
+
+@import './components/buttons.css';
+@import './components/panels.css';
+@import './components/badges.css';
+@import './components/forms.css';
+
+/* ============================================================================
+   BASE STYLES - Global foundation styles
+   ============================================================================ */
+
+/* CSS Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--emergency-font-primary);
+  font-size: var(--emergency-text-base);
+  line-height: var(--emergency-leading-normal);
+  color: var(--emergency-text-primary);
+  background: var(--emergency-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================================
+   UTILITY CLASSES - Quick styling utilities
+   ============================================================================ */
+
+/* Display utilities */
+.emergency-hidden { display: none !important; }
+.emergency-block { display: block !important; }
+.emergency-inline { display: inline !important; }
+.emergency-inline-block { display: inline-block !important; }
+.emergency-flex { display: flex !important; }
+.emergency-inline-flex { display: inline-flex !important; }
+.emergency-grid { display: grid !important; }
+
+/* Flexbox utilities */
+.emergency-flex-col { flex-direction: column; }
+.emergency-flex-row { flex-direction: row; }
+.emergency-flex-wrap { flex-wrap: wrap; }
+.emergency-flex-nowrap { flex-wrap: nowrap; }
+.emergency-items-center { align-items: center; }
+.emergency-items-start { align-items: flex-start; }
+.emergency-items-end { align-items: flex-end; }
+.emergency-justify-center { justify-content: center; }
+.emergency-justify-start { justify-content: flex-start; }
+.emergency-justify-end { justify-content: flex-end; }
+.emergency-justify-between { justify-content: space-between; }
+
+/* Position utilities */
+.emergency-relative { position: relative; }
+.emergency-absolute { position: absolute; }
+.emergency-fixed { position: fixed; }
+.emergency-sticky { position: sticky; }
+
+/* Width and height utilities */
+.emergency-w-full { width: 100%; }
+.emergency-h-full { height: 100%; }
+.emergency-w-auto { width: auto; }
+.emergency-h-auto { height: auto; }
+
+/* Overflow utilities */
+.emergency-overflow-hidden { overflow: hidden; }
+.emergency-overflow-auto { overflow: auto; }
+.emergency-overflow-scroll { overflow: scroll; }
+
+/* ============================================================================
+   EMERGENCY-SPECIFIC UTILITIES - Crisis management helpers
+   ============================================================================ */
+
+/* Emergency visibility states */
+.emergency-critical-only {
+  display: none;
+}
+
+.emergency-state-critical .emergency-critical-only {
+  display: block;
+}
+
+.emergency-warning-only {
+  display: none;
+}
+
+.emergency-state-warning .emergency-warning-only {
+  display: block;
+}
+
+/* Emergency text emphasis */
+.emergency-text-urgent {
+  font-weight: var(--emergency-font-bold);
+  color: var(--emergency-critical);
+  text-transform: uppercase;
+  letter-spacing: var(--emergency-tracking-wider);
+}
+
+.emergency-text-attention {
+  font-weight: var(--emergency-font-semibold);
+  color: var(--emergency-warning);
+}
+
+.emergency-text-safe {
+  color: var(--emergency-good);
+}
+
+/* Emergency backgrounds */
+.emergency-bg-critical-subtle {
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--emergency-critical);
+}
+
+.emergency-bg-warning-subtle {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--emergency-warning);
+}
+
+.emergency-bg-good-subtle {
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 4px solid var(--emergency-good);
+}
+
+/* ============================================================================
+   RESPONSIVE UTILITIES - Mobile-first emergency interfaces
+   ============================================================================ */
+
+/* Mobile utilities */
+@media (max-width: 768px) {
+  .emergency-mobile-hidden { display: none !important; }
+  .emergency-mobile-block { display: block !important; }
+  .emergency-mobile-flex { display: flex !important; }
+  .emergency-mobile-grid { display: grid !important; }
+  
+  .emergency-mobile-text-center { text-align: center; }
+  .emergency-mobile-text-left { text-align: left; }
+  
+  .emergency-mobile-w-full { width: 100%; }
+  .emergency-mobile-h-auto { height: auto; }
+}
+
+/* Desktop utilities */
+@media (min-width: 769px) {
+  .emergency-desktop-hidden { display: none !important; }
+  .emergency-desktop-block { display: block !important; }
+  .emergency-desktop-flex { display: flex !important; }
+  .emergency-desktop-grid { display: grid !important; }
+}
+
+/* ============================================================================
+   ACCESSIBILITY UTILITIES - Inclusive design helpers
+   ============================================================================ */
+
+/* Screen reader only content */
+.emergency-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus management */
+.emergency-focus-trap {
+  outline: none;
+}
+
+.emergency-focus-trap:focus-visible {
+  box-shadow: var(--emergency-focus-ring);
+}
+
+/* Skip links for keyboard navigation */
+.emergency-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--emergency-bg-primary);
+  color: var(--emergency-text-primary);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--emergency-radius-md);
+  z-index: var(--emergency-z-emergency-alert);
+}
+
+.emergency-skip-link:focus {
+  top: 6px;
+}
+
+/* ============================================================================
+   PRINT STYLES - Emergency documentation support
+   ============================================================================ */
+
+@media print {
+  .emergency-print-hidden {
+    display: none !important;
+  }
+  
+  .emergency-panel {
+    box-shadow: none;
+    border: 2px solid #000;
+    background: white;
+    color: black;
+  }
+  
+  .emergency-btn {
+    border: 1px solid #000;
+    background: white;
+    color: black;
+  }
+  
+  .emergency-badge {
+    border: 1px solid #000;
+    background: white;
+    color: black;
+  }
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT - System preference handling
+   ============================================================================ */
+
+@media (prefers-color-scheme: light) {
+  .emergency-auto-theme {
+    --emergency-bg-primary: #ffffff;
+    --emergency-bg-secondary: #f8fafc;
+    --emergency-bg-tertiary: #f1f5f9;
+    --emergency-text-primary: #0f172a;
+    --emergency-text-secondary: #334155;
+    --emergency-text-muted: #64748b;
+    --emergency-border-primary: #e2e8f0;
+    --emergency-border-secondary: #cbd5e1;
+  }
+}
+
+/* ============================================================================
+   PERFORMANCE OPTIMIZATIONS - Smooth emergency interfaces
+   ============================================================================ */
+
+/* GPU acceleration for animations */
+.emergency-gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth scrolling for emergency panels */
+.emergency-smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Content visibility for large lists */
+.emergency-content-visibility {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px;
+}
+
+/* ============================================================================
+   EMERGENCY THEME VARIANTS - Different crisis contexts
+   ============================================================================ */
+
+/* Fire emergency theme */
+.emergency-theme-fire {
+  --emergency-accent-primary: #ff4500;
+  --emergency-accent-secondary: #ff6347;
+}
+
+/* Flood emergency theme */
+.emergency-theme-flood {
+  --emergency-accent-primary: #1e90ff;
+  --emergency-accent-secondary: #4169e1;
+}
+
+/* Earthquake emergency theme */
+.emergency-theme-earthquake {
+  --emergency-accent-primary: #8b4513;
+  --emergency-accent-secondary: #a0522d;
+}
+
+/* Medical emergency theme */
+.emergency-theme-medical {
+  --emergency-accent-primary: #dc143c;
+  --emergency-accent-secondary: #b22222;
+}
